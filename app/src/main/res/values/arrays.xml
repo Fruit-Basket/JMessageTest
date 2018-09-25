@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="user">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="user_management">
+        <item>注册</item>
+        <item>登录</item>
+        <item>登录and获取</item>
+        <item>登出</item>
+        <item>用户信息</item>
+        <item>更新用户信息</item>
+        <item>更新头像</item>
+        <item>更新密码</item>
+    </string-array>
+
+    <string-array name="conversation_management">
+        <item>创建单聊会话</item>
+        <item>创建群聊会话</item>
+        <item>查询所有会话</item>
+        <item>删除单聊会话</item>
+        <item>删除群聊会话</item>
+        <item>单个会话的未读消息总数</item>
+        <item>重置会话未读消息数</item>
+        <item>设置单个会话的未读消息数</item>
+    </string-array>
+
+    <string-array name="message_management">
+        <item>发送消息</item>
+        <item>使用会话发送消息</item>
+        <item>发送消息给自己</item>
+        <item>获取好友会话中的所有消息</item>
+        <item>获取所有会话的所有信息</item>
+        <item>获取未读消息总数</item>
+        <item>发送群消息</item>
+        <item>删除单聊会话中的最后一条消息</item>
+        <item>发送带敏感词的自定义消息</item>
+    </string-array>
+
+    <string-array name="friend_management">
+        <item>发送添加好友请求</item>
+        <item>接受好友请求</item>
+        <item>好友列表</item>
+        <item>删除好友</item>
+        <item>加入黑名单</item>
+        <item>黑名单列表</item>
+    </string-array>
+
+    <string-array name="group_menagement">
+        <item>申请加入群聊</item>
+        <item>退出群聊</item>
+        <item>解散群组</item>
+        <item>群成员列表</item>
+        <item>当前用户所在的群</item>
+        <item>获取群消息</item>
+        <item>删除群成员</item>
+    </string-array>
+
+</resources>
