@@ -19,6 +19,9 @@ public class GroupManagement {
     private MyCallback myCallback=new MyCallback();
     private TextView log_tv;
 
+    private long groupId=Condition.GROUP_2;//群Id
+    private long groupTestId=Condition.GROUP_TEST;
+
     public GroupManagement(TextView log_tv){
         this.log_tv=log_tv;
     }
@@ -62,14 +65,14 @@ public class GroupManagement {
      * 申请入群
      */
     private void applyJoinGroup(){
-        JMessageClient.applyJoinGroup(Condition.GROUP_2,"group apply from "+Condition.userName,myCallback);
+        JMessageClient.applyJoinGroup(groupId,"group apply from "+Condition.userName,myCallback);
     }
 
     /**
      * 退出群聊
      */
     private void exitGroup(){
-        JMessageClient.exitGroup(Condition.GROUP_2,myCallback);
+        JMessageClient.exitGroup(groupId,myCallback);
     }
 
     /**
@@ -77,7 +80,7 @@ public class GroupManagement {
      */
     private void dissolveGroup(){
         JMessageClient.adminDissolveGroup(
-                Condition.groupTest,//指定群Id
+                groupTestId,//指定群Id
                 myCallback
         );
     }
@@ -87,7 +90,7 @@ public class GroupManagement {
      */
     private void getGroupMembers(){
         JMessageClient.getGroupMembers(
-                Condition.GROUP_2,//群Id
+                groupId,//群Id
                 new GetGroupMembersCallback(){
 
                     @Override
@@ -160,7 +163,7 @@ public class GroupManagement {
      */
     private void getGroupInfo(){
         JMessageClient.getGroupInfo(
-                Condition.GROUP_2,
+                groupId,
                 new GetGroupInfoCallback(){
 
                     @Override
@@ -190,7 +193,7 @@ public class GroupManagement {
         userNameList.add(Condition.friendName);
 
         JMessageClient.removeGroupMembers(
-                Condition.GROUP_2,
+                groupId,
                 userNameList,
                 myCallback
         );
