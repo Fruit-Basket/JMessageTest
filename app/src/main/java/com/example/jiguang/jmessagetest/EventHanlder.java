@@ -37,15 +37,15 @@ public class EventHanlder {
      * @param event
      */
     public void onEvent(MessageEvent event) {
-        Log.i(TAG, "onEvent(MessageEvent)");
+        Log.i(TAG, "onEvent(MessageEvent):在线消息事件");
 
         Message message = ((MessageEvent)event).getMessage();
         StringBuilder stringBuilder = new StringBuilder("收到消息：\n");
 
         messageHandle(message,stringBuilder);
 
-        Log.i(TAG,stringBuilder.toString());
         log_tv.append(stringBuilder.toString());
+        Log.i(TAG,stringBuilder.toString());
 
     }
 
@@ -53,7 +53,7 @@ public class EventHanlder {
      * 离线消息事件
      **/
     public void onEvent(OfflineMessageEvent event) {
-        Log.i(TAG,"onEvent(OfflineMessageEvent)");
+        Log.i(TAG,"onEvent(OfflineMessageEvent)：离线消息事件");
         //获取事件发生的会话对象
         Conversation conversation = ((OfflineMessageEvent)event).getConversation();
         List<Message> newMessageList = ((OfflineMessageEvent)event).getOfflineMessageList();//获取此次离线期间会话收到的新消息列表
@@ -73,7 +73,7 @@ public class EventHanlder {
      * @param event
      */
     public void onEvent(ContactNotifyEvent event) {
-        Log.i(TAG,"onEvent(ContactNotifyEvent)");
+        Log.i(TAG,"onEvent(ContactNotifyEvent)：好友事件");
 
         String reason = event.getReason();
         String fromUsername = event.getFromUsername();
@@ -106,7 +106,7 @@ public class EventHanlder {
     }
 
     public void onEvent(MyInfoUpdatedEvent event){
-        Log.i(TAG,"onEvent(MyInfoUpdatedEvent)");
+        Log.i(TAG,"onEvent(MyInfoUpdatedEvent):用户信息更新事件");
         log_tv.append("用户消息已新\n");
     }
 
@@ -115,10 +115,13 @@ public class EventHanlder {
      * @param event
      */
     public void onEvent(ConversationRefreshEvent event){
-        Log.i(TAG,"onEvent(ConversationRefreshEvent)");
-        Log.i(TAG,"会话好友消息："+event.getConversation().getTargetInfo().toString());
+        Log.i(TAG,"onEvent(ConversationRefreshEvent)：会话刷新事件");
         log_tv.append("会话刷新事件\n");
+
+        Log.i(TAG,"会话好友消息："+event.getConversation().getTargetInfo().toString());
+
         log_tv.append("理由："+event.getReason().name());
+        Log.i(TAG,"理由："+event.getReason().name());
     }
 
     /**
@@ -126,7 +129,7 @@ public class EventHanlder {
      * @param groupApprovalEvent
      */
     public void onEvent(GroupApprovalEvent groupApprovalEvent){
-        Log.i(TAG,"onEvent(GroupApprovalEvent)");
+        Log.i(TAG,"onEvent(GroupApprovalEvent)：群审批事件");
         Log.i(TAG,groupApprovalEvent.getType().name());
         Log.i(TAG,groupApprovalEvent.getFromUsername());
 

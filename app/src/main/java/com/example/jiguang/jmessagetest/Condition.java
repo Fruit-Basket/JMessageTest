@@ -32,7 +32,7 @@ public class Condition {
 	//群ID
 	public static final long GROUP_1=26886409;//私有
 	public static final long GROUP_2=26886413;//公有
-	public static final long GROUP_TEST=27197919;
+	public static final long GROUP_TEST=28457901;
 	
 	private Condition() {}
 	

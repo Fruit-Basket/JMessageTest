@@ -55,7 +55,7 @@ public class ConversationManagement {
                 break;
 
             case 4://删除群聊会话
-                status=JMessageClient.deleteGroupConversation(Condition.GROUP_2);
+                status=JMessageClient.deleteGroupConversation(groupConversationToDelete);
                 if(status==true){
                     log_tv.append("delete OK\n");
                 }
@@ -122,6 +122,7 @@ public class ConversationManagement {
 
         }
         log_tv.append(stringBuilder.toString());
+        Log.i(TAG,stringBuilder.toString());
     }
 
     /**
@@ -170,10 +171,10 @@ public class ConversationManagement {
         Conversation conversation;
 
         conversation=JMessageClient.getGroupConversation(
-                Condition.GROUP_2//群ID
+                groupToChat//群ID
         );
         if(conversation==null){
-            conversation=Conversation.createGroupConversation(Condition.GROUP_2);
+            conversation=Conversation.createGroupConversation(groupToChat);
         }
         else{
             Log.i(TAG,"conversation!=null");

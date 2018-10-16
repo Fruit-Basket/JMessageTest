@@ -18,7 +18,7 @@ public class MyApplication extends Application {
         Log.i(TAG,"onCreate()");
 
         JMessageClient.setDebugMode(true);
-        JMessageClient.init(getApplicationContext());//没有开启消息漫游
+        JMessageClient.init(getApplicationContext(),true);//启用消息漫游
 
     }
 }

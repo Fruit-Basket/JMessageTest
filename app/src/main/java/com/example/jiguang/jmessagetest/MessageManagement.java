@@ -218,6 +218,7 @@ public class MessageManagement {
         }
 
         log_tv.append(stringBuilder.toString());
+        Log.i(TAG,stringBuilder.toString());
     }
 
     /**

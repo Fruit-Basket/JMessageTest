@@ -19,7 +19,7 @@ public class GroupManagement {
     private MyCallback myCallback=new MyCallback();
     private TextView log_tv;
 
-    private long groupId=Condition.GROUP_2;//群Id
+    private long groupId=Condition.GROUP_TEST;//群Id
     private long groupTestId=Condition.GROUP_TEST;
 
     public GroupManagement(TextView log_tv){
@@ -95,6 +95,9 @@ public class GroupManagement {
 
                     @Override
                     public void gotResult(int responseCode, String responseMessage, List<UserInfo> list) {
+                        Log.d(TAG,"Response code= "+responseCode);
+                        Log.d(TAG,"Response message: "+responseMessage);
+
                         if(log_tv!=null){
                             if(responseCode==0){
 
@@ -105,18 +108,18 @@ public class GroupManagement {
                                         stringBuilder.append("成员"+(++i)+": "+info.getUserName()+"\n");
                                     }
                                     log_tv.append(stringBuilder.toString());
+                                    Log.d(TAG,stringBuilder.toString());
+
                                 }
                                 else{
                                     log_tv.append("Grouplist=null\n");
+                                    Log.d(TAG,"Grouplist=null\n");
                                 }
                             }
                             else{
                                 log_tv.append("Group Feilure\n");
                             }
                         }
-
-                        Log.d(TAG,"Response code= "+responseCode);
-                        Log.d(TAG,"Response message: "+responseMessage);
                     }
                 }
         );
